@@ -1,0 +1,75 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{titulo}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark">
+  <form [formGroup]="forma" (ngSubmit)="agregar()">
+    <ion-item color="dark">
+      <ion-input 
+        type="hidden"
+        formControlName="id"></ion-input>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input 
+        type="text"
+        placeholder="Nombre"
+        formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-label position="floating">Edad</ion-label>
+      <ion-input 
+        type="number"
+        placeholder="20"
+        formControlName="edad"></ion-input>
+    </ion-item>
+    <ion-list color="dark" class="ion-no-border">
+      <ion-radio-group
+        color="dark" 
+        class="ion-no-border"
+        value="hombre"
+        formControlName="sexo">
+        <ion-list-header color="dark" class="ion-no-border">
+          <ion-label>Sexo</ion-label>
+        </ion-list-header>
+        <ion-item color="dark" class="ion-no-border">
+          <ion-label>Hombre</ion-label>
+          <ion-radio slot="start" color="primary" value="hombre"></ion-radio>
+        </ion-item>
+  
+        <ion-item color="dark">
+          <ion-label>Mujer</ion-label>
+          <ion-radio slot="start" color="secondary" value="mujer"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-item color="dark">
+      <ion-label position="floating">Fecha de nacimiento</ion-label>
+      <ion-datetime
+        placeholder="Selecciona una fecha"
+        formControlName="nacimiento"></ion-datetime>
+    </ion-item>
+    <!-- <ion-item color="dark">
+      <ion-label position="floating">Foto de perfil</ion-label>
+    </ion-item> -->
+    <section>
+  
+      <ion-button expand="full" color="primary" type="submit">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        Guardar 
+      </ion-button>
+      <ion-button expand="block" color="danger" (click)="cancelar()">
+        <ion-icon name="exit-outline"></ion-icon>
+        Cancelar 
+      </ion-button>
+    </section>
+  </form>
+  
+</ion-content>
