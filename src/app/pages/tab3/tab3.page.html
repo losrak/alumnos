@@ -56,9 +56,12 @@
         placeholder="Selecciona una fecha"
         formControlName="nacimiento"></ion-datetime>
     </ion-item>
-    <!-- <ion-item color="dark">
-      <ion-label position="floating">Foto de perfil</ion-label>
-    </ion-item> -->
+    <ion-item color="dark">
+      <ion-button (click)="getImage()">Selecciona una imagen</ion-button>
+      <ion-input 
+        type="hidden"
+        formControlName="foto"></ion-input>
+    </ion-item>
     <section>
   
       <ion-button expand="full" color="primary" type="submit">
