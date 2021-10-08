@@ -1,0 +1,20 @@
+name: Merge Master
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  deploy-version:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout
+      uses: actions/checkout@v1
+
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14'
+
+    - name: testing
+    - run: npm install
+    - run: npm run test
